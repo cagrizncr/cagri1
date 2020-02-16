@@ -1,0 +1,34 @@
+﻿@model IEnumerable<SigortamNetProject.Models.OfferModel>
+
+    @{
+        ViewBag.Title = "Eski Teklifler";
+    }
+
+    <h2>Eski Teklif Listesi</h2>
+
+    <table class="table">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.TcNo
+        </td>
+        <td>
+            @item.CompanyName
+        </td>
+        <td>
+            @item.CompanyLogo
+        </td>
+        <td>
+            @item.OfferPrice
+        </td>
+        <td>
+            @item.OfferDescription
+        </td>
+    </tr>
+        }
+
+    </table>
+<div>
+    @Html.ActionLink("Ana Sayfaya Dön", "Index", "DataModels")
+</div>

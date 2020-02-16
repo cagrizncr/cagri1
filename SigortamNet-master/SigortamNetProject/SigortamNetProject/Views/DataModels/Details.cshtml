@@ -1,0 +1,50 @@
+﻿@model SigortamNetProject.Models.DataModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DataModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Plaka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plaka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tckn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tckn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RuhsatKodu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RuhsatKodu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RuhsatNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RuhsatNo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

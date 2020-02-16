@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SigortamNetProject.Models.DataModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Plaka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tckn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RuhsatKodu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RuhsatNo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plaka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tckn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RuhsatKodu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RuhsatNo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
+                @Html.ActionLink("Teklif Al", "GetOffer", new { id=item.Id}) |
+                @Html.ActionLink("Teklif Sorgula", "ListOldOffers", "Offer", new { id = item.Id },new { })
+                @*<a data-value="@item.Id" class="btn btn-success offer">Teklif Al</a>*@
+            </td>
+        </tr>
+    }
+
+</table>
+
+@*<script>
+    $(document).ready(function () {
+        $(".offer").on("click", function () {
+            $.get("http://localhost:58402/api/offers/getoffer");
+        })
+
+    });
+</script>*@

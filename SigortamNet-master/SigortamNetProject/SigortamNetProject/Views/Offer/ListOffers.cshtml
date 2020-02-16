@@ -1,0 +1,33 @@
+﻿@model SigortamNetProject.Models.ListOfferResponseModel
+
+@{
+    ViewBag.Title = "ListOffers";
+}
+
+<h2>Teklif Listesi</h2>
+
+<table class="table">
+@foreach (var item in Model.Offers) {
+    <tr>
+        <td>
+            @item.CompanyName
+        </td>
+        <td>
+            @item.CompanyLogo
+        </td>
+        <td>
+            @item.NumberPlate
+        </td>
+        <td>
+            @item.OfferAmount
+        </td>
+        <td>
+            @item.OfferDescription
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Ana Sayfaya Dön", "Index","DataModels")
+</div>
